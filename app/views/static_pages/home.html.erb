@@ -1,4 +1,5 @@
 <% provide(:title, "Home") %>
+<!--
 <h1>Sample App</h1>
 <p>
   This is the home page for the
@@ -18,3 +19,10 @@
   <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
   <%#= image_tag("kitten.jpg", alt: "Kitten") %>
 </p>
+-->
+<% if logged_in? %>
+  <%= render 'static_pages/logged_in_home' %>
+<% else %>
+  <%= render 'static_pages/logged_out_home' %>
+<% end %>
+
